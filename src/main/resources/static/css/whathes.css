@@ -1,0 +1,153 @@
+.main{
+    margin: 40px;
+    background-color: white;
+}
+
+body{
+    background-color: #efefef;
+}
+.btn-publish{
+    float: right;
+    margin-bottom: 30px;
+}
+
+.media-object{
+    width: 40px;
+    height: 40px;
+}
+
+.media-margin-left{
+    margin-left: 40px;
+}
+.media-body{
+    padding-top: 7px;
+}
+
+.media .media-font{
+
+}
+
+.like-view-comment{
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+    
+}
+.profile .section{
+    margin-top: 20px;
+}
+
+.whathes-menu{
+    display: block;
+    margin-bottom: 15px;
+    color: #999;
+    font-size: 13px;
+}
+.jumbotron{
+    margin: 50px;
+}
+
+.question-tag .label-info{
+    white-space: normal;
+    margin-top: 5px;
+}
+
+.publish-tag-margin{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.publish-tag-margin:hover{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.question-tag{
+    margin-right: 10px;
+    font-size: 16px;
+}
+.question-related{
+    line-height: 10px;
+    padding-left: 0px;
+    list-style:none;
+}
+.question-related-list{
+    margin-top: 10px;
+}
+
+.fly{
+    width: 100%;
+}
+
+
+.comment{
+    margin: 10px;
+}
+
+.sub-comments{
+    border: 1px solid #eee;
+    border-radius: 7px;
+    margin-top: 10px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+.sub-comments .btn{
+    margin: 10px 15px;
+}
+
+.comment-btn{
+    float: right;
+    margin-bottom: 10px;
+}
+.comment-sp{
+    margin-top: 0px;
+}
+.menu{
+    color: #999;
+}
+
+.menu .icon{
+    /*margin-right: 6px;*/
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.menu .comment-icon:hover{
+    color: #499ef3;
+    cursor:pointer;
+}
+
+.menu .like-count{
+    color: #499ef3;
+    cursor:pointer;
+}
+
+.menu .comment-icon{
+    margin-left: 10px;
+    font-size: 15px;
+    cursor:pointer;
+}
+
+.menu .active{
+    color: #499ef3;
+}
+
+.menu .icon:hover{
+    color: #499ef3;
+}
+
+.comments{
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.question-title{
+    margin-top: 15px;
+}
+.SelectTagPublish{
+    display: none;
+    margin-top: 10px;
+
+}

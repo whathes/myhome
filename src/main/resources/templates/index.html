@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WHATHES社区</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/whathes.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+<!--<script type="application/javascript">-->
+    <!--window.onload=function () {-->
+        <!--var closeble = window.localStorage.getItem("closeble");-->
+        <!--if (closeble==true){-->
+            <!--window.close();-->
+            <!--window.localStorage.removeItem("closeble");-->
+        <!--}-->
+    <!--}-->
+
+<!--</script>-->
+<body>
+<div th:insert="~{navigation :: nav}"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" >
+            <h2><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 发现</h2>
+            <hr>
+            <div class="media media-margin-left" th:each="question : ${pagination.data}">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object img-rounded" th:src="${question.user.avatarUrl}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <a th:href="@{'question/'+${question.id}}" th:text="${question.title}"></a>
+                    </h4>
+
+                    <span class="like-view-comment">
+                        <span th:text="${question.likeCount}"></span>喜欢·
+                        <span th:text="${question.viewCount}"></span>浏览·
+                        <span th:text="${question.commentCount}"></span>回复·
+                        <span th:text="${#dates.format(question.gmtCreate,'yyyy MM dd')}"></span>
+                    </span>
+                </div>
+            </div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li th:if="${pagination.showFirstPage}">
+                        <a href="/?page=1" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li th:if="${pagination.showPrevious}">
+                        <a th:href="@{/(page=${pagination.page - 1})}" aria-label="Previous">
+                            <span aria-hidden="true">&lt;</span>
+                        </a>
+                    </li>
+                    <li th:each="page:${pagination.pages}" th:class="${pagination.page==page?'active':''}">
+                        <a  th:text="${page}" th:href="@{/(page=${page})}" >
+
+                        </a>
+                    </li>
+                    <li th:if="${pagination.showNext}">
+                        <a th:href="@{/page=(${pagination.page + 1})}" aria-label="Next">
+                            <span aria-hidden="true">&gt;</span>
+                        </a>
+                    </li>
+                    <li th:if="${pagination.showEndPage}">
+                        <a th:href="@{/(page=${pagination.totalPage})}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <div th:if="${session.user!=null}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <h3><span class=" glyphicon glyphicon-tree-deciduous" aria-hidden="true" style="color: #00aaaa"></span>个人能力</h3>
+                <table class="table table-hover">
+                    <tr>
+                        <th>好友</th>
+                        <th>爱好</th>
+                        <th>擅长</th>
+                        <th>主攻</th>
+                    </tr>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Tom</th>
+                        <td>篮球</td>
+                        <td>JAVA</td>
+                        <td>JAVA开发后端服务</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Jack</th>
+                        <td>足球</td>
+                        <td>python</td>
+                        <td>python爬虫</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Lily</th>
+                        <td>唱歌</td>
+                        <td>HTML</td>
+                        <td>前端页面开发</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${session.user==null}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h3>温馨提示</h3>
+                <p>本社区登录为Github授权登录</p>
+                <p>需要登录后才能完成发帖、评论</p>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
