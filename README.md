@@ -8,4 +8,4 @@ idea：2017
 
 Navicat：12
 
-测试浏览器：Chrome
+浏览器：Chrome
