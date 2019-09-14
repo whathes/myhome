@@ -68,8 +68,6 @@ public class NotificationService {
         List<NotificationDTO> notificationDTOS = new ArrayList<>();
 
         for (Notification notification : notifications) {
-
-
             NotificationDTO notificationDTO = new NotificationDTO();
             User user = userMapper.findById(notification.getNotifier());
             Question question=questionMapper.getById(notification.getQuestionId());
@@ -83,11 +81,7 @@ public class NotificationService {
             notificationDTOS.add(notificationDTO);
         }
 
-
-
         paginationDTO.setData(notificationDTOS);
-
-
         return paginationDTO;
     }
 }
