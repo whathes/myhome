@@ -55,9 +55,6 @@ public class NotificationService {
         //分页
         Integer offset=size*(page-1);
 
-
-
-
         //将问题属性加入Page的数据
 
         List<Notification> notifications=notificationMapper.listByReceiver(id,offset,size);

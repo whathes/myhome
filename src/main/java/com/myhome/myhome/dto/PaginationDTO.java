@@ -95,7 +95,6 @@ public class PaginationDTO<T> {
             }
         }
 
-
         //第一页是否显示上一页的按钮
         if (page==1){
             showPrevious=false;
@@ -121,13 +120,6 @@ public class PaginationDTO<T> {
         }else {
             showFirstPage=true;
         }
-
-
-
-
-
-
-
 
     }
 }
